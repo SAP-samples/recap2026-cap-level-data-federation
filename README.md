@@ -1,41 +1,33 @@
-# SAP-samples/repository-template
-This default template for SAP Samples repositories includes files for README, LICENSE, and REUSE.toml. All repositories on github.com/SAP-samples will be created based on this template.
+# CAP-level data federation
 
-# Containing Files
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/recap2026-cap-level-data-federation)](https://api.reuse.software/info/github.com/SAP-samples/recap2026-cap-level-data-federation)
 
-1. The LICENSE file:
-In most cases, the license for SAP sample projects is `Apache 2.0`.
+Created for a [re>≡CAP 2026](https://recap-conf.dev/) hands-on workshop.
 
-2. The REUSE.toml file: 
-The [Reuse Tool](https://reuse.software/) must be used for your samples project. You can find the REUSE.toml in the project initial. Please replace the parts inside the single angle quotation marks < > by the specific information for your repository.
+## Prerequisites
 
-3. The README.md file (this file):
-Please edit this file as it is the primary description file for your project. You can find some placeholder titles for sections below.
+To follow the exercises, you need the following things to be installed on your computer:
 
-# [Title]
-<!-- Please include descriptive title -->
+* [Node.js and cds-dk](https://cap.cloud.sap/docs/get-started/#node-js-and-cds-dk)
+* [git](https://cap.cloud.sap/docs/get-started/#git-and-github) (gh and github not needed)
+* [Cloud Foundry CLI `cf`](https://help.sap.com/docs/btp/sap-business-technology-platform/download-and-install-cloud-foundry-command-line-interface)
+* (recommended) [Visual Studio Code](https://cap.cloud.sap/docs/get-started/#visual-studio-code)
 
-<!--- Register repository https://api.reuse.software/register, then add REUSE badge:
-[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/REPO-NAME)](https://api.reuse.software/info/github.com/SAP-samples/REPO-NAME)
--->
 
-## Description
-<!-- Please include SEO-friendly description -->
+## Exercises
 
-## Requirements
 
-## Download and Installation
 
-## Known Issues
-<!-- You may simply state "No known issues. -->
+## Further reading
+
+* [CAP-Level Service Integration](https://cap.cloud.sap/docs/guides/integration/calesi)
+* [CAP-level Data Federation](https://cap.cloud.sap/docs/guides/integration/data-federation)
+
 
 ## How to obtain support
-[Create an issue](https://github.com/SAP-samples/<repository-name>/issues) in this repository if you find a bug or have questions about the content.
- 
-For additional support, [ask a question in SAP Community](https://answers.sap.com/questions/ask.html).
 
-## Contributing
-If you wish to contribute code, offer fixes or improvements, please send a pull request. Due to legal reasons, contributors will be asked to accept a DCO when they create the first pull request to this project. This happens in an automated fashion during the submission process. SAP uses [the standard DCO text of the Linux Foundation](https://developercertificate.org/).
+Support for the content in this repository is available during the actual time of the workshop event for which this content has been designed.
+
 
 ## License
 Copyright 2026 SAP SE or an SAP affiliate company and recap2026-cap-level-data-federation contributors. Please see our [LICENSE](LICENSE) for copyright and license information. Detailed information including third-party components and their licensing/copyright information is available [via the REUSE tool](https://api.reuse.software/info/github.com/SAP-samples/recap2026-cap-level-data-federation).
