@@ -17,13 +17,12 @@ created in the [Preparation](../ex0/README.md) section.
 
 Your workspace already contains a folder _xtravels_ with an
 almost complete xtravels app, including a Fiori UI in _xtravels/app/travels_.
-Note that the model is "broken". In _xtravels/db/schema.cds_ there are some incomplete association definitions.
-The editor may show some error indicators, e.g. red underlines in this file. Don't worry about them, they
-will disappear when we add the missing parts.
-
 
 <br>![xtravels folder structure](/exercises/ex2/images/02_01_0010.png)
 
+Note that the model is "broken". In _xtravels/db/schema.cds_ there are some incomplete association definitions.
+The editor may show some error indicators, e.g. red underlines in this file. Don't worry about them, they
+will disappear when we add the missing parts.
 
 1. Have a look at the main entities of xtravels in file _xtravels/db/schema.cds_:
     * Travels:  
@@ -68,7 +67,7 @@ that you have exported from the xflights app in the previous exercise.
     
     Due to the workspace definition in _package.json_ (the one in the _ws_ folder),
     the exported API package in _apis_ is used to satisfy this new dependency.
-    In _node\_modules_, you can find a symbolic link for _xflights-data_ pointing
+    In _node\_modules_, you can find a symbolic link for _@capire/xflights-data_ pointing
     to _apis/data-service_.
 
 
@@ -143,7 +142,7 @@ imported entities via the consumption views as if they were local.
 We use the imported entities as association targets in _xtravels/db/schema.cds_.
 In addition, we expose filght information directly in the travel service.
 
-1. In file _xtravels/db/schema.cds_, below the `using directives at the top of the file, add
+1. In file _xtravels/db/schema.cds_, below the `using` directive at the top of the file, add
     ```cds
     using { sap.capire.xflights as x } from '../apis/xflights';
     ```
@@ -162,7 +161,7 @@ In addition, we expose filght information directly in the travel service.
     }
     ```
 
-3. In file _xtravels/srv/travels-service.cds_, below the `using directives at the top of the file, add
+3. In file _xtravels/srv/travels-service.cds_, below the `using` directive at the top of the file, add
     ```cds
     using { sap.capire.xflights as x } from '../apis/xflights';
     ```
@@ -222,6 +221,7 @@ and are filled with _csv_ data from the imported package:
 
     <br>![cds watch output](/exercises/ex2/images/02_05_0010.png)
 
+<!--
     ```log
     [cds] - connect to db > sqlite { url: ':memory:' }
     (node:34040) ExperimentalWarning: SQLite is an experimental feature and might change at any time
@@ -231,6 +231,7 @@ and are filled with _csv_ data from the imported package:
       > init from ..\apis\data-service\data\sap.capire.flights.data.Airports.csv 
       > init from ..\apis\data-service\data\sap.capire.flights.data.Airlines.csv 
     ```
+-->
 
 5. Open the automatically served index page in your browser at [localhost:4004](http://localhost:4004/).
 
@@ -241,10 +242,10 @@ You should see a full fledged xtravels app.
 
 7. Click on any travel to open the details page with the flight bookings.
 In the fields with the flight information (e.g. "Airline") you see the local test data from
-the imported API package (prefix "test"). These fields automatically got nice labels,
+the imported API package (prefix "test-rep"). These fields automatically got nice labels,
 which also came from the API package via the `@title` annotations and the respective texts.
 
-__TODO__ screenshot
+    <br>![xtravels ui](/exercises/ex2/images/02_05_0030.png)
 
 
 
@@ -285,18 +286,9 @@ of this service).
 
     <br>![cds watch output](/exercises/ex2/images/02_06_0010.png)
 
-    ```log
-    [cds] - connect to sap.capire.flights.data > hcql { url: 'http://localhost:4005/hcql/data' }
-    ```
-
     The data for `Flights` and `Supplements` is replicated:
 
     <br>![cds watch output](/exercises/ex2/images/02_06_0020.png)
-
-    ```log
-    Replicated 44 entries { for: 'sap.capire.xflights.Flights', via: 'hcql' }
-    Replicated 49 entries { for: 'sap.capire.xflights.Supplements', via: 'hcql' }
-    ```
 
 5. Observe the output of `cds watch` in the xflights terminal.  
 Here you can see the incoming calls (from xtravels) to `GET` the
@@ -304,6 +296,7 @@ data from entities `Flights` and `Supplements`.
 
     <br>![](/exercises/ex2/images/02_06_0030.png)
 
+<!--
     ```log
     [hcql] - POST /hcql/data/ {
       SELECT: {
@@ -340,13 +333,14 @@ data from entities `Flights` and `Supplements`.
       }
     }
     ```
-
+-->
 
 6. Go to the index page [localhost:4004](http://localhost:4004/) of the xtravels app,
 start the [xtravels web app](http://localhost:4004/travels/webapp/index.html),
 and click a travel to get to the details page.
-You now see the data directly coming from xflights: there is no "(test)" prefix any more.
+You now see the data directly coming from xflights: there is no "(test-rep)" prefix any more.
 
+    <br>![](/exercises/ex2/images/02_06_0040.png)
 
 
 ## Exercise 2.7 - Cleanup

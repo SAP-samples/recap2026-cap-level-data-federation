@@ -48,7 +48,7 @@ entity TravelAgencies {
 
 entity Passengers : managed {
   key ID           : String(10);
-      FullName     : String(80);
+      Name         : String(80);
       Title        : String(10);
       Street       : String(60);
       PostalCode   : String(10);

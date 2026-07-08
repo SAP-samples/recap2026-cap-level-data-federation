@@ -8,6 +8,10 @@ created in the [Preparation](../ex0/README.md) section.
 
 ## Exercise 1.1 - Inspect xflight's domain model
 
+Your workspace already contains a folder xflights with a complete app.
+
+<br>![xflights entity graph](/exercises/ex1/images/01_01_0010.png)
+
 Look at _xflights/db/schema.cds_. Here are the basic entities for flight information:
 
 * Airlines  
@@ -22,7 +26,7 @@ Look at _xflights/db/schema.cds_. Here are the basic entities for flight informa
 * Supplements  
   Things you can add to a flight, like additional luggage, food, drinks.
 
-<br>![xflights entity graph](/exercises/ex1/images/01_01_0010.png)
+<br>![xflights entity graph](/exercises/ex1/images/01_01_0020.png)
 
 Corresponding initial data can be found in the _csv_ files in folder _xflights/db/data_.
 

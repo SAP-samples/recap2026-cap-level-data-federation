@@ -56,7 +56,7 @@ The API is described as "CSN Interop JSON", which can be downloaded from here.
 2. Download the CSN Interop JSON.
 
     If you should not be able to download the CSN Interop JSON for any reason,
-    you can use [_assets/ex3/sap-s4com-Customer-v1.json_](../../assets/ex3/sap-s4com-Customer-v1.json).
+    you can use [_assets/ex4/sap-s4com-Customer-v1.json_](../../assets/ex4/sap-s4com-Customer-v1.json).
 
 3. Copy the file to folder _xtravels_ in your workspace.
 
@@ -204,7 +204,7 @@ test the xtravels app with the Data Product entities being mocked by local
 tables in a SQLite in-memory database.
 
 1. Add some test data: copy file
-[assets/ex3/sap.s4com-Customer.v1.Customer.csv](../../assets/ex3/sap.s4com-Customer.v1.Customer.csv)
+[assets/ex4/sap.s4com-Customer.v1.Customer.csv](../../assets/ex4/sap.s4com-Customer.v1.Customer.csv)
 to folder _xtravels/db/data_. This provides some test data for mocking the
 `Customer` entity.
 

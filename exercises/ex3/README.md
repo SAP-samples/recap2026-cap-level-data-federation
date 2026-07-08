@@ -72,20 +72,20 @@ In the xflights terminal, execute
 * (optional) Slightly modify the data in the _data/...csv_ files. Later, this will allow
   you to see whether you view data coming from local mock tables fed by these _csv_ files,
   or data coming from the xflights tables. For example, prepend the names of Airlines with
-  "(test)", like so:  
+  "(test-syn)", like so:  
     _airlines.csv_
     ```csv 
       ID,modifiedAt,name,icon,currency_code
-      GA,2026-07-07T14:30:11.830Z,(test) Green Albatros,https://...,CAD
-      FA,2026-07-07T14:30:11.830Z,(test) Fly Africa,https://...,ZAR
+      GA,2026-07-07T14:30:11.830Z,(test-syn) Green Albatros,https://...,CAD
+      FA,2026-07-07T14:30:11.830Z,(test-syn) Fly Africa,https://...,ZAR
     ...
     ```
     _airports.csv_
     ```csv
     ID,modifiedAt,name,city,country_code
-    FRA,2026-07-06T10:08:58.522Z,(test) Frankfurt Airport,Frankfurt/Main,DE
-    HAM,2026-07-06T10:08:58.522Z,(test) Hamburg Airport,Hamburg,DE
-    MUC,2026-07-06T10:08:58.522Z,(test) Munich Airport,Munich,DE
+    FRA,2026-07-06T10:08:58.522Z,(test-syn) Frankfurt Airport,Frankfurt/Main,DE
+    HAM,2026-07-06T10:08:58.522Z,(test-syn) Hamburg Airport,Hamburg,DE
+    MUC,2026-07-06T10:08:58.522Z,(test-syn) Munich Airport,Munich,DE
     ...
     ```
 
@@ -126,6 +126,10 @@ After completing these steps, you will have deployed the database model of the x
     ```sh
     cds deploy --to hana
     ```
+    There should be a message like
+    ```log
+    successfully finished deployment
+    ```
 
 
 
@@ -152,17 +156,19 @@ the entities of the new API package. The rest of the model can stay as is.
     ```
 
 
-2. In the xtravels terminal, start the app to test it locally:
+3. In the xtravels terminal, start the app to test it locally:
     ```sh
     cds watch
     ```
 
-3. Open the automatically served index page in your browser at [localhost:4004](http://localhost:4004/)
-   and click .... 
+3. Go to the index page [localhost:4004](http://localhost:4004/) of the xtravels app,
+   start the [xtravels web app](http://localhost:4004/travels/webapp/index.html),
+   and click a travel to get to the details page.
    The imported service is mocked and we again see flights data from _csv_ files, this time from the new API package.
 
+    <br>![](/exercises/ex3/images/03_04_0010.png)
 
-__TODO__ may prefix test datsa with "test-rep" and "tes-syn" ?
+4. Stop `cds watch` in the xtravels terminal by typing `Ctrl+C`.
 
 
 
@@ -193,16 +199,18 @@ After completing these steps, the xtravels app is ready to be deployed to HANA.
     and have a look at the generated HDI files in folder _xtravels/gen/db_:
     ```
     gen/db
-    ├── src/gen
-    |   ├── sap.capire.flights.data_syn.Airlines_#proxy.hdbtable
-    |   ├── sap.capire.flights.data_syn.Airports_#proxy.hdbtable
-    |   ├── sap.capire.flights.data_syn.Flights_#proxy.hdbtable
-    |   ├── sap.capire.flights.data_syn.Supplements_#proxy.hdbtable
-    |   ├── sap.capire.flights.data_syn.SupplementTypes_#proxy.hdbtable
-    |   ├── sap.capire.flights.data_syn.hdbgrants
-    |   └── sap.capire.flights.data_syn.hdbsynonym
-    └── cfg/gen
-        └── sap.capire.flights.data_syn.hdbsynonymconfig
+    ├── cfg/gen
+    |   ├── ...
+    |   └── sap.capire.flights.data_syn.hdbsynonymconfig
+    └── src/gen
+        ├── ...
+        ├── sap.capire.flights.data_syn.Airlines_#proxy.hdbtable
+        ├── sap.capire.flights.data_syn.Airports_#proxy.hdbtable
+        ├── sap.capire.flights.data_syn.Flights_#proxy.hdbtable
+        ├── sap.capire.flights.data_syn.Supplements_#proxy.hdbtable
+        ├── sap.capire.flights.data_syn.SupplementTypes_#proxy.hdbtable
+        ├── sap.capire.flights.data_syn.hdbgrants
+        └── sap.capire.flights.data_syn.hdbsynonym
     ```
 
 For each entity in the imported service we find a mock table and a synonym definition
@@ -244,10 +252,19 @@ xflights HDI container.
     cds watch --profile hybrid
     ```
 
-4. See output ...
+4. Observe the output of `cds watch`. This time no local database is started, but the app
+   is connected to HANA:
 
+    <br>![](/exercises/ex3/images/03_06_0010.png)
 
-5. Stop `cds watch` in the xtravels terminal by typing `Ctrl+C`.
+5. Go to the index page [localhost:4004](http://localhost:4004/) of the xtravels app,
+start the [xtravels web app](http://localhost:4004/travels/webapp/index.html),
+and click a travel to get to the details page.
+We have deployed without _.hdbsynonymconfig_, thus we see the data from the mock table:
+
+    <br>![](/exercises/ex3/images/03_06_0020.png)
+
+6. Stop `cds watch` in the xtravels terminal by typing `Ctrl+C`.
 
 
 
@@ -289,15 +306,17 @@ in the previous section for this.
     cds watch --profile hybrid
     ```
 
-6. See output ...
+6. In the browser, refresh the travel detail page. You now see data directly coming from the
+   sflight's database via synonyms:
 
+    <br>![](/exercises/ex3/images/03_07_0010.png)
 
-7. Stop `cds watch` in the xtravels terminal by typing `Ctrl+C`.
 
 
 ## Exercise 3.8 - Cleanup
 
-__TODO__ needed ?
+Stop `cds watch` in the xtravels terminal by typing `Ctrl+C`.
+
 
 
 ## Summary

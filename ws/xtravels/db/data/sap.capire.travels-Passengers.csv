@@ -1,4 +1,4 @@
-ID;FullName;Title;Street;PostalCode;City;Country_code;PhoneNumber;EMailAddress
+ID;Name;Title;Street;PostalCode;City;Country_code;PhoneNumber;EMailAddress
 0000000001;Johannes Buchholm;Mr.;Muehltalstr. 14;68723;Schwetzingen;DE;+49-291-299232;johannes.buchholm@flight.example.de
 0000000002;James Buchholm;Mr.;Froschstr. 91;90419;Nuernberg;DE;+49-601-130850;james.buchholm@flight.example.de
 0000000003;Thomas Buchholm;Mr.;Hauptstr. 84;63263;Neu-Isenburg;DE;+49-394-339928;thomas.buchholm@flight.example.de
