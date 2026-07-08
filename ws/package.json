@@ -1,0 +1,7 @@
+{
+  "workspaces": [
+    "xflights",
+    "xtravels",
+    "apis"
+  ]
+}
