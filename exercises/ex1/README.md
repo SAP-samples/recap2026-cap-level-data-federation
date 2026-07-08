@@ -1,4 +1,4 @@
-# Exercise 1 - Creating API package for xflights
+# Exercise 1 - Create API package for xflights
 
 In this exercise, you will create an API package for flights data in xflights.
 

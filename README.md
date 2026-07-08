@@ -31,30 +31,35 @@ In this document, we use the following abbreviations:
 
 ## Overview
 
-In this session 
-Data Federation
-basic pricciple CALESI
-provider: define service which is the API, export API package
-consumer: import the API package, build consumption view, use in moel as if own entity
-technically 2 modes: service-level replication and synonyms
-finally consume BDC data product, works along the same lines
+In this session you use [CAP-level Data Federation](https://cap.cloud.sap/docs/guides/integration/data-federation)
+to make flights masterdata of CAP application _xflights_ ("provider app") available to another
+CAP application _xtravels_ ("consumer app").
+The apps are simplified versions of the public CAP sample applications
+[xflights](https://github.com/capire/xflights) and [xtravels](https://github.com/capire/xtravels).
+
+In the provider, you define API services to expose the data and export them as API packages.
+In the consumer, you import the API packages, build consumption views on top and use them
+in the CDS model as if they were local entities.
+You federate data both via service-level replication and via HANA synonyms.
+Finally, you also import the API of a BDC Data Product to xtravels and use the synonym approach
+to access the its data.
+
+
 
 ### Further reading
 
 * [CAP-Level Service Integration](https://cap.cloud.sap/docs/guides/integration/calesi)
-* [CAP-level Data Federation](https://cap.cloud.sap/docs/guides/integration/data-federation)
+* 
 
 
 
 ## Exercises
 
 - [Preparation](exercises/ex0/)
-- [Exercise 1 - Create API package for flight data...](exercises/ex1/)
-    - [Exercise 1.1 - ...](exercises/ex1/README.md#exercise-11---create-xflights-project)
-    - ...
-- Exercise 2 - Service-level replication
-- Exercise 3 - Synonyms
-- Exercise 4 - Consume Data Product
+- [Exercise 1 - Create API package for xflights](exercises/ex1/)
+- [Exercise 2 - Service-level replication](exercises/ex2/)
+- [Exercise 3 - Synonym-based federation](exercises/ex3)
+- [Exercise 4 - Consume Data Product "Customer" from S/4](exercises/ex4/)
 
 
 

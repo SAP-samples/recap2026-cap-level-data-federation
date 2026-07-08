@@ -33,4 +33,4 @@ Alternatively, you can also activate the "Auto Save" feature of VS Code via the 
 
 You have now prepared the workspace.
 
-Continue to [Exercise 1 - Creating API package for xflights](../ex1/README.md).
+Continue to [Exercise 1 - Create API package for xflights](../ex1/README.md).
