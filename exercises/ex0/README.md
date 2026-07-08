@@ -20,7 +20,8 @@ code .
 The _ws_ folder is where you will be developing the CAP applications.
 
 You should see this folder structure:
-__TODO__ screenshot
+
+<br>![](/exercises/ex0/images/00_01_0010.png)
 
 
 ## Preparation 2 - (optional) Activate auto-save
