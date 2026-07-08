@@ -31,7 +31,8 @@ In this document, we use the following abbreviations:
 
 ## Overview
 
-In this session you use [CAP-level Data Federation](https://cap.cloud.sap/docs/guides/integration/data-federation)
+In this session, you use [CAP-Level Service Integration](https://cap.cloud.sap/docs/guides/integration/calesi)
+and [CAP-level Data Federation](https://cap.cloud.sap/docs/guides/integration/data-federation)
 to make flights masterdata of CAP application _xflights_ ("provider app") available to another
 CAP application _xtravels_ ("consumer app").
 The apps are simplified versions of the public CAP sample applications
@@ -43,13 +44,6 @@ in the CDS model as if they were local entities.
 You federate data both via service-level replication and via HANA synonyms.
 Finally, you also import the API of a BDC Data Product to xtravels and use the synonym approach
 to access the its data.
-
-
-
-### Further reading
-
-* [CAP-Level Service Integration](https://cap.cloud.sap/docs/guides/integration/calesi)
-* 
 
 
 
