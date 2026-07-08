@@ -22,7 +22,7 @@ Look at _xflights/db/schema.cds_. Here are the basic entities for flight informa
 * Supplements  
   Things you can add to a flight, like additional luggage, food, drinks.
 
-<br>![](/exercises/ex1/images/01_01_0010.png)
+<br>![xflights entity graph](/exercises/ex1/images/01_01_0010.png)
 
 Corresponding initial data can be found in the _csv_ files in folder _xflights/db/data_.
 
@@ -91,7 +91,7 @@ After completing these steps, you will have an API package for the new service `
 
 1. In VS Code, open a terminal
 
-<br>![vs code - open terminal](/exercises/ex1/images/01_03_00xx.png)
+    <br>![vs code - open terminal](/exercises/ex1/images/01_03_0010.png)
 
 2. In the new terminal, change to the _xflights_ folder (assuming the terminal has opened in
    your workspace root folder _ws_):
@@ -112,6 +112,14 @@ After completing these steps, you will have an API package for the new service `
     * `--plugin` turns the package into a CAP plugin to benefit from CAP's plug & play configuration features in consuming apps.
 
     Output:
+
+    <br>![terminal output cds export](/exercises/ex1/images/01_03_0020.png)
+
+    The most important part is the service definition in _apis/data-service/services.csn_.
+    It is a CSN that contains only the entities exposed in service `sap.capire.flights.data`.
+    Note that the CSN only describes the API: the query sections are not present in the entities.
+
+<!--
     ```txt
     Exporting APIs to ..\apis\data-service ...
 
@@ -127,11 +135,7 @@ After completing these steps, you will have an API package for the new service `
       > ..\apis\data-service\data\sap.capire.flights.data.Airports.csv
       > ..\apis\data-service\data\sap.capire.flights.data.Supplements.csv
     ```
-
-    The most important part is the service definition in _apis/data-service/services.csn_.
-    It is a CSN that contains only the entities exposed in service `sap.capire.flights.data`.
-    Note that the CSN only describes the API: the query sections are not present in the entities.
-
+-->
 
 
 4. Adapt the generated API package in folder _apis/data-service_:
@@ -154,20 +158,20 @@ After completing these steps, you will have an API package for the new service `
     This workaround is needed, because the auto-exposure mechanism of the compiler doesn't yet seamlessly work together with exporting and importing APIs.
   * Slightly modify the data in the _csv_ files in _apis/data-service/data_. Later, this will allow you to distinguish
     data coming from local mock tables fed by these csv files from data coming directly from the xflights tables via replication or synonyms.
-    For example, prepend the names of airlines and airports with "(test)", like so:  
+    For example, prepend the names of airlines and airports with "(test-rep)", like so:  
     _airlines.csv_
     ```csv 
       ID,modifiedAt,name,icon,currency_code
-      GA,2026-07-07T14:30:11.830Z,(test) Green Albatros,https://...,CAD
-      FA,2026-07-07T14:30:11.830Z,(test) Fly Africa,https://...,ZAR
+      GA,2026-07-07T14:30:11.830Z,(test-rep) Green Albatros,https://...,CAD
+      FA,2026-07-07T14:30:11.830Z,(test-rep) Fly Africa,https://...,ZAR
     ...
     ```
     _airports.csv_
     ```csv
     ID,modifiedAt,name,city,country_code
-    FRA,2026-07-06T10:08:58.522Z,(test) Frankfurt Airport,Frankfurt/Main,DE
-    HAM,2026-07-06T10:08:58.522Z,(test) Hamburg Airport,Hamburg,DE
-    MUC,2026-07-06T10:08:58.522Z,(test) Munich Airport,Munich,DE
+    FRA,2026-07-06T10:08:58.522Z,(test-rep) Frankfurt Airport,Frankfurt/Main,DE
+    HAM,2026-07-06T10:08:58.522Z,(test-rep) Hamburg Airport,Hamburg,DE
+    MUC,2026-07-06T10:08:58.522Z,(test-rep) Munich Airport,Munich,DE
     ...
     ```
 
