@@ -39,27 +39,24 @@ After completing these steps, you will have a new service that acts as an API to
     using sap.capire.flights as x from '../db';
 
     /**
-     * Master data service providing flight-related data, e.g. Flights, Airlines,
+    * Master data service providing flight-related data, e.g. Flights, Airlines,
     * Airports, and Supplements (e.g. extra luggage, meals, etc.).
     */
     @hcql @rest @odata @graphql
     service sap.capire.flights.data {
 
-      // Serve Flights data via denormalized view with flattened FlightConnections
+      // Serve Flights data via denormalized view
       @readonly entity Flights as projection on x.Flights {
         key flight.ID,
         key date,
-        flight.{*} excluding {ID},
+        flight.{*} excluding {ID},  // flattened FlightConnections
         *,
-      } excluding { flight, createdAt, createdBy, modifiedBy } // as flight details are flattened
+      } excluding { flight, createdAt, createdBy, modifiedBy }  // don't need assoc flight any more
 
       // Serve Airlines, Airports, Supplements as is
-      @readonly entity Airlines as projection on x.Airlines
-        excluding { createdAt, createdBy, modifiedBy };
-      @readonly entity Airports as projection on x.Airports
-        excluding { createdAt, createdBy, modifiedBy };
-      @readonly entity Supplements as projection on x.Supplements
-        excluding { createdAt, createdBy, modifiedBy };
+      @readonly entity Airlines    as projection on x.Airlines    excluding { createdAt, createdBy, modifiedBy };
+      @readonly entity Airports    as projection on x.Airports    excluding { createdAt, createdBy, modifiedBy };
+      @readonly entity Supplements as projection on x.Supplements excluding { createdAt, createdBy, modifiedBy };
     }
 
 
@@ -157,25 +154,22 @@ After completing these steps, you will have an API package for the new service `
     This workaround is needed, because the auto-exposure mechanism of the compiler doesn't yet seamlessly work together with exporting and importing APIs.
   * Slightly modify the data in the _csv_ files in _apis/data-service/data_. Later, this will allow you to distinguish
     data coming from local mock tables fed by these csv files from data coming directly from the xflights tables via replication or synonyms.
-    For example, prepend the names of airlines and airports with "(test)", like so:
-
-    ::: code-group
-
-    ```csv [airlines.csv]
+    For example, prepend the names of airlines and airports with "(test)", like so:  
+    _airlines.csv_
+    ```csv 
       ID,modifiedAt,name,icon,currency_code
       GA,2026-07-07T14:30:11.830Z,(test) Green Albatros,https://...,CAD
       FA,2026-07-07T14:30:11.830Z,(test) Fly Africa,https://...,ZAR
     ...
     ```
-
-    ```csv [airports.csv]
+    _airports.csv_
+    ```csv
     ID,modifiedAt,name,city,country_code
     FRA,2026-07-06T10:08:58.522Z,(test) Frankfurt Airport,Frankfurt/Main,DE
     HAM,2026-07-06T10:08:58.522Z,(test) Hamburg Airport,Hamburg,DE
     MUC,2026-07-06T10:08:58.522Z,(test) Munich Airport,Munich,DE
     ...
     ```
-    :::
 
 
 

@@ -3,7 +3,7 @@
 ## Note
 
 This exercise description has been written for Windows computers.
-If you run the exercise on your own machine, you may have to adapt at a few places.
+You can of course run the exercise also on different machines, but you may have to adapt at a few places.
 
 
 ## Preparation 1 - Setup workspace
@@ -27,15 +27,6 @@ __TODO__ screenshot
 
 Each time you change a file in the course of this exercise, don't forget to save with `Ctrl+S` or via the "File" menu.
 Alternatively, you can also activate the "Auto Save" feature of VS Code via the "File" menu.
-
-
-## Preparation 3 - Copying 
-
-__TODO__ necessary?
-
-In the course of the exercises, you will need to copy some files from the [assets](../../assets) folder
-into the workspace. The simplest way to do this is to open folder _recap2026-cap-level-data-federation/assets_
-in Windows Explorer and then copy the files from there into VS Code via Drag & Drop.
 
 
 ## Summary

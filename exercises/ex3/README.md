@@ -72,11 +72,20 @@ In the xflights terminal, execute
 * (optional) Slightly modify the data in the _data/...csv_ files. Later, this will allow
   you to see whether you view data coming from local mock tables fed by these _csv_ files,
   or data coming from the xflights tables. For example, prepend the names of Airlines with
-  "(test)", like so:
+  "(test)", like so:  
+    _airlines.csv_
+    ```csv 
+      ID,modifiedAt,name,icon,currency_code
+      GA,2026-07-07T14:30:11.830Z,(test) Green Albatros,https://...,CAD
+      FA,2026-07-07T14:30:11.830Z,(test) Fly Africa,https://...,ZAR
+    ...
+    ```
+    _airports.csv_
     ```csv
-    ID,modifiedAt,name,icon,currency_code
-    GA,2026-04-20T14:39:39.329Z,(test) Green Albatros,https://..,CAD
-    FA,2026-04-20T14:39:39.329Z,(test) Fly Africa,https://..,ZAR
+    ID,modifiedAt,name,city,country_code
+    FRA,2026-07-06T10:08:58.522Z,(test) Frankfurt Airport,Frankfurt/Main,DE
+    HAM,2026-07-06T10:08:58.522Z,(test) Hamburg Airport,Hamburg,DE
+    MUC,2026-07-06T10:08:58.522Z,(test) Munich Airport,Munich,DE
     ...
     ```
 

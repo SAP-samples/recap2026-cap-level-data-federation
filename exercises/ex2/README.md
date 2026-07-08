@@ -177,6 +177,7 @@ In addition, we expose filght information directly in the travel service.
     the inherited annotations from the API service definition in xflights.
 
 
+__TODO__ use "diff?
 
 __TODO__ we don't need this - add anyway?
 // Extend Flights to navigate to back to local Bookings
