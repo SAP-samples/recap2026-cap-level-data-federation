@@ -2,7 +2,8 @@
 
 In this exercise, you will change the federation method in xtravels
 from servicel-level replication to federation via HANA synonyms
-with the help of the new synonym plugin __TODO LINK__.
+with the help of the new synonym plugin ...provide link once published...
+<!-- TODO -->
 
 All file or directory paths in this exercise are relative to the workspace folder _ws_
 created in the [Preparation](../ex0/README.md) section.
@@ -100,7 +101,7 @@ After completing these steps, you will have deployed the database model of the x
 
 1. Install the synonym plugin. In the xflights terminal, execute
     ```sh
-    npm install git+https://github.tools.sap/cap/cds-df-synonyms.git
+    npm install <add link once published>
     ```
 
 2. In the xflights terminal, execute
@@ -178,7 +179,7 @@ After completing these steps, the xtravels app is ready to be deployed to HANA.
 
 1. Install the synonym plugin. In the xtravels terminal, execute
     ```sh
-    npm install git+https://github.tools.sap/cap/cds-df-synonyms.git
+    npm install <add link once published>
     ```
 
 2. In the xtravels terminal, execute
@@ -257,10 +258,8 @@ xflights HDI container.
 
     <br>![](/exercises/ex3/images/03_06_0010.png)
 
-5. Go to the index page [localhost:4004](http://localhost:4004/) of the xtravels app,
-start the [xtravels web app](http://localhost:4004/travels/webapp/index.html),
-and click a travel to get to the details page.
-We have deployed without _.hdbsynonymconfig_, thus we see the data from the mock table:
+5. In the browser, refresh the travel detail page.
+   We have deployed without _.hdbsynonymconfig_, thus we see the data from the mock table:
 
     <br>![](/exercises/ex3/images/03_06_0020.png)
 

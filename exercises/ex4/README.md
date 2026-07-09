@@ -56,7 +56,7 @@ The API is described as "CSN Interop JSON", which can be downloaded from here.
 2. Download the CSN Interop JSON.
 
     If you should not be able to download the CSN Interop JSON for any reason,
-    you can use [_assets/ex4/sap-s4com-Customer-v1.json_](../../assets/ex4/sap-s4com-Customer-v1.json).
+    you can use [_assets/ex4/sap-s4com-Customer-v1.json_](../../ws/_assets/ex4/sap-s4com-Customer-v1.json).
 
 3. Copy the file to folder _xtravels_ in your workspace.
 
@@ -193,7 +193,7 @@ because the xtravels app was from the beginning designed in such a way that
 entity `Passengers` can easily be replaced by the Data Product entity `Customers`.
 
 
-
+<!--
 ## Exercise 4.6 - Mock
 
 After completing these steps, you will have run the xtravels app with
@@ -204,7 +204,7 @@ test the xtravels app with the Data Product entities being mocked by local
 tables in a SQLite in-memory database.
 
 1. Add some test data: copy file
-[assets/ex4/sap.s4com-Customer.v1.Customer.csv](../../assets/ex4/sap.s4com-Customer.v1.Customer.csv)
+[assets/ex4/sap.s4com-Customer.v1.Customer.csv](../../ws/_assets/ex4/sap.s4com-Customer.v1.Customer.csv)
 to folder _xtravels/db/data_. This provides some test data for mocking the
 `Customer` entity.
 
@@ -232,7 +232,7 @@ and is filled with the data from the csv file.
 The app looks almost like the last time you have started it
 in [Exercise 2.5](../ex2/README.md#exercise-25---run-the-xtravels-app-with-flights-being-mocked).
 This time, however, you see different data for `Customer`, namely the test data you have just added via the csv file.
-
+-->
 
 ## Summary
 
@@ -240,4 +240,4 @@ You've now consumed the metadata of a DBC Data Product and incorporated it into
 the xtravels model.
 In the next exercise we use Data Federation via synonyms to connect to the data.
 
-Continue to [Exercise 5 - __TODO__](../ex5/README.md)
+Continue to ... to come ...

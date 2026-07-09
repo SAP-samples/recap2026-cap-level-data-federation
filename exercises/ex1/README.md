@@ -83,10 +83,11 @@ Among others, there is the CAP specific
 [hcql protocol](https://cap.cloud.sap/docs/releases/2026/jun26#new-hcql-protocol-adapter),
 which basically is the transport of CQL - an extension of SQL that adds support for path expressions - over HTTP.
 
-
+<!--
+TODO
 You can start `cds watch` and see these services ... http://localhost:4005/  ... _.env_
 OR do this later when actually triggering replication
-
+-->
 
 
 ## Exercise 1.3 - Export API service

@@ -120,7 +120,7 @@ but always use the consumption views as "single point of access".
     ```
 
 
-
+<!--
 __OLD__
 This is a so called "consumption" view that acts as single point of
 access to the Data Product entity. All references to the Data Product
@@ -130,7 +130,7 @@ In the consumption view, you select only those elements of the Data Product enti
 that you actually want to use in your application.
 In addition, the fields of the imported Data Product entity `Customer` are renamed so
 that they match those of entity `Passengers`, which you are going to replace.
-
+-->
 
 
 
@@ -176,6 +176,7 @@ In addition, we expose filght information directly in the travel service.
     the inherited annotations from the API service definition in xflights.
 
 
+<!--
 __TODO__ use "diff?
 
 __TODO__ we don't need this - add anyway?
@@ -185,7 +186,7 @@ extend x.Flights with columns {
 }
 
 __TODO__ annotations in travels app?
-
+-->
 
 
 ## Exercise 2.5 - Run the xtravels app with flights being mocked
@@ -196,7 +197,7 @@ from the API package being mocked by local entities.
 The imported service is mocked out of the box, which allows to 
 test xtravels locally without any connection to xflights.
 
-1. In the terminal for _xflights_, ensure the CAP server (for the `cds watch` process) is stopped, [as mentioned at the end of the previous exercise](../ex1/README.md#exercise-19---cleanup).
+1. In the terminal for _xflights_, ensure the CAP server (for the `cds watch` process) is stopped.
 
 2. In the terminal for _xtravels_, start the xtravels app.
     ```sh
@@ -291,7 +292,7 @@ of this service).
     <br>![cds watch output](/exercises/ex2/images/02_06_0020.png)
 
 5. Observe the output of `cds watch` in the xflights terminal.  
-Here you can see the incoming calls (from xtravels) to `GET` the
+Here you can see the incoming calls (from xtravels) to get the
 data from entities `Flights` and `Supplements`.
 
     <br>![](/exercises/ex2/images/02_06_0030.png)
@@ -335,10 +336,8 @@ data from entities `Flights` and `Supplements`.
     ```
 -->
 
-6. Go to the index page [localhost:4004](http://localhost:4004/) of the xtravels app,
-start the [xtravels web app](http://localhost:4004/travels/webapp/index.html),
-and click a travel to get to the details page.
-You now see the data directly coming from xflights: there is no "(test-rep)" prefix any more.
+6. In the browser, refresh the travel detail page. You now see the data directly coming from xflights
+   - there is no "(test-rep)" prefix any more.
 
     <br>![](/exercises/ex2/images/02_06_0040.png)
 
