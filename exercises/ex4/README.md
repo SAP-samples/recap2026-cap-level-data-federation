@@ -326,3 +326,4 @@ BDC shares.
 You've now consumed a DBC Data Product, incorporated it into the xtravels model
 and used the synonym plugin to connect your local entities to the virtual tables
 pointing to the BDC data.
+
