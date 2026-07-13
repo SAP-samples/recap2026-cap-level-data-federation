@@ -101,7 +101,7 @@ After completing these steps, you will have deployed the database model of the x
 
 1. Install the synonym plugin. In the xflights terminal, execute
     ```sh
-    npm install <add link once published>
+    npm install git+https://github.com/cap-js/cds-federation-synonyms.git
     ```
 
 2. In the xflights terminal, execute
@@ -179,7 +179,7 @@ After completing these steps, the xtravels app is ready to be deployed to HANA.
 
 1. Install the synonym plugin. In the xtravels terminal, execute
     ```sh
-    npm install <add link once published>
+    npm install git+https://github.com/cap-js/cds-federation-synonyms.git
     ```
 
 2. In the xtravels terminal, execute
