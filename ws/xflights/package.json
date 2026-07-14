@@ -11,5 +11,10 @@
   "devDependencies": {
     "@cap-js/sqlite": ">=2"
   },
+  "cds": {
+    "server": {
+      "port": 4005
+    }
+  },
   "license": "Apache-2.0"
 }

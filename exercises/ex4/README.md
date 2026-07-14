@@ -16,7 +16,7 @@ You will then replace local entity `Passenger` with entity `Customer` from the D
 This session focuses on the CAP part of the integration with a BDC Data Product.
 Prior to the session, we have already
 * prepared a BDC tenant with the "Customer" Data Product installed
-* created a HANA Remote Source in the HANA instance, which points to the share (see also [assets/ex4/HANA-setup](../../assets/ex4/HANA-setup.md))
+* created a HANA Remote Source in the HANA instance, which points to the share
 * created a schema `DP_VT_CUSTOMER` in the HANA instance with virtual tables pointing
   to the share tables in the BDC tenant.
 * prepared a user-provided service `grantor-dp-admin` in Cloud Foundry that holds credentials for accessing this schema.
@@ -323,6 +323,6 @@ BDC shares.
 
 ## Summary
 
-You've now consumed a DBC Data Product, incorporated it into the xtravels model
+You've now consumed a BDC Data Product, incorporated it into the xtravels model
 and used the synonym plugin to connect your local entities to the virtual tables
 pointing to the BDC data.
