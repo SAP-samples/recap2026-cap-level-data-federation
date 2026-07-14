@@ -193,7 +193,7 @@ After completing these steps, the xtravels app is ready to be deployed to HANA.
     "src/gen/**/*.hdbsynonym",
     "cfg/gen/**/*.hdbsynonymconfig"
     ```
-    If the file is missing, copy file _undeploy.json_ from folder _\_assets/ex3_ to _xflights/db_.
+    If the file is missing, copy file _undeploy.json_ from folder _\_assets/ex3_ to _xtravels/db_.
 
 4. In the xtravels terminal, run
     ```
