@@ -280,7 +280,7 @@ BDC shares.
     ```
     Have a look at the generated HDI files in folder _xtravels/gen/db_. There now is a bunch of files for
     the imported Customer service:
-    ```bash
+    ```
     gen/db
     ├── cfg/gen
     |   ├── ...

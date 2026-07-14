@@ -205,7 +205,7 @@ After completing these steps, the xtravels app is ready to be deployed to HANA.
     cds build --for hana
     ```
     and have a look at the generated HDI files in folder _xtravels/gen/db_:
-    ```bash
+    ```
     gen/db
     ├── cfg/gen
     |   ├── ...
