@@ -108,7 +108,7 @@ After completing these steps, you will have deployed the database model of the x
     cds add hana
     ```
 
-3. Add to file _xflights/db/undeploy.json_:
+3. Add to file _xflights/db/undeploy.json_ (this file got created by the previous step):
     ```
     "src/gen/**/*.hdbrole"
     ```
@@ -131,6 +131,7 @@ After completing these steps, you will have deployed the database model of the x
     successfully finished deployment
     ```
 
+6. You can now close the xflights terminal to free up some screen real estate.
 
 
 ## Exercise 3.4 - Use the new API package in xtravels
@@ -192,12 +193,17 @@ After completing these steps, the xtravels app is ready to be deployed to HANA.
     "cfg/gen/**/*.hdbsynonymconfig"
     ```
 
-4. Before we actually deploy, run
+4. In the xtravels terminal, run
+    ```
+    npm install
+    ```
+
+5. Before we actually deploy, run
     ```sh
     cds build --for hana
     ```
     and have a look at the generated HDI files in folder _xtravels/gen/db_:
-    ```
+    ```bash
     gen/db
     ├── cfg/gen
     |   ├── ...
@@ -232,8 +238,8 @@ or to the views in xflights.
 After completing these steps, you will have deployed the xtravels app to HANA.
 Flight information is read via synonyms from the local mock tables.
 
-We first make a deployment without the _.hdbsynonymconfig_ file so that the local mock files
-are used. Then we redeploy with the _.hdbsynonymconfig_ and thus redirect the synonyms to the
+We first make a deployment without the _.hdbsynonymconfig_ file so that the mock tables in the xtravels HDI copntainer are used.
+Then we redeploy with the _.hdbsynonymconfig_ and thus redirect the synonyms to the
 xflights HDI container.
 
 1. In folder _xtravels/db_, add a new file _.hdiignore_ with the following content:
@@ -277,7 +283,7 @@ that provides the actual name of the target schema for the synonym as well as cr
 access the xflights schema. We use the HDI container service that resulted from the xflights deployment
 in the previous section for this.
 
-1. Remove file _db/.hdiignore_.
+1. Remove file _xtravels/db/.hdiignore_.
 
 2. Bind to the HDI container service for xflights. In the xtravels terminal, run
     ```sh

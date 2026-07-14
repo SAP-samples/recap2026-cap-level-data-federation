@@ -31,7 +31,7 @@ in the CAP app to be connected to the corresponding virtual tables via a synonym
 > In Exercises 4.1 and 4.2 you use [SAP Business Accelerator Hub](https://api.sap.com/) to find
 Data Product "Customer" and download its metadata. If you can't access SAP Business Accelerator Hub,
 you can jump directly to step 3 of  [Exercise 4.2](#exercise-42---download-data-product-metadata)
-and use the metadata file provided in [_assets/ex4_](../../ws/_assets/ex4).
+and use the metadata file provided in [_\_assets/ex4_](../../ws/_assets/ex4).
 
 
 
@@ -78,7 +78,7 @@ The API is described as "CSN Interop JSON", which can be downloaded from here.
 3. Download the CSN Interop JSON.
 
     If you should not be able to download the CSN Interop JSON for any reason,
-    you can use [_assets/ex4/sap-s4com-Customer-v1.json_](../../ws/_assets/ex4/sap-s4com-Customer-v1.json).
+    you can use [_\_assets/ex4/sap-s4com-Customer-v1.json_](../../ws/_assets/ex4/sap-s4com-Customer-v1.json).
 
 4. Copy the file to folder _xtravels_ in your workspace.
 
@@ -237,7 +237,7 @@ test the xtravels app with the Data Product entities being mocked by local
 tables in a SQLite in-memory database.
 
 1. Add some test data: copy file
-[assets/ex4/sap.s4com-Customer.v1.Customer.csv](../../ws/_assets/ex4/sap.s4com-Customer.v1.Customer.csv)
+[_\_assets/ex4/sap.s4com-Customer.v1.Customer.csv_](../../ws/_assets/ex4/sap.s4com-Customer.v1.Customer.csv)
 to folder _xtravels/db/data_. This provides some test data for mocking the
 `Customer` entity.
 
@@ -280,7 +280,7 @@ BDC shares.
     ```
     Have a look at the generated HDI files in folder _xtravels/gen/db_. There now is a bunch of files for
     the imported Customer service:
-    ```txt
+    ```bash
     gen/db
     ├── cfg/gen
     |   ├── ...

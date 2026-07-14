@@ -149,7 +149,7 @@ After completing these steps, you will have an API package for the new service `
     ```json
     {
       "name": "@capire/xflights-data",
-      "version": "0.1.1",
+      "version": "0.1.3",
       "cds": { /* ... */ }
     }
     ```

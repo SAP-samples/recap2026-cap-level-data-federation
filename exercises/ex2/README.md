@@ -197,7 +197,7 @@ from the API package being mocked by local entities.
 The imported service is mocked out of the box, which allows to 
 test xtravels locally without any connection to xflights.
 
-1. In the terminal for _xflights_, ensure the CAP server (for the `cds watch` process) is stopped.
+1. In the terminal for _xflights_, ensure the CAP server (for the `cds watch` process) is _not_ running.
 
 2. In the terminal for _xtravels_, start the xtravels app.
     ```sh
@@ -336,8 +336,7 @@ data from entities `Flights` and `Supplements`.
     ```
 -->
 
-6. In the browser, refresh the travel detail page. You now see the data directly coming from xflights
-   - there is no "(test-rep)" prefix any more.
+6. In the browser, refresh the travel detail page. You now see the data directly coming from xflights: there is no "(test-rep)" prefix any more.
 
     <br>![](/exercises/ex2/images/02_06_0040.png)
 
