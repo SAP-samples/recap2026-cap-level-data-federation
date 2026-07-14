@@ -108,10 +108,11 @@ After completing these steps, you will have deployed the database model of the x
     cds add hana
     ```
 
-3. Add to file _xflights/db/undeploy.json_ (this file got created by the previous step):
+3. Add to file _xflights/db/undeploy.json_ (this file should have been created by the previous step):
     ```
     "src/gen/**/*.hdbrole"
     ```
+    If the file is missing, copy file _undeploy.json_ from folder _\_assets/ex3_ to _xflights/db_.
 
 4. Before we actually deploy to HANA, run
     ```sh
@@ -187,11 +188,12 @@ After completing these steps, the xtravels app is ready to be deployed to HANA.
     cds add hana
     ```
 
-3. Add to file _xtravels/db/undeploy.json_:
+3. Add to file _xtravels/db/undeploy.json_ (this file should have been created by the previous step):
     ```
     "src/gen/**/*.hdbsynonym",
     "cfg/gen/**/*.hdbsynonymconfig"
     ```
+    If the file is missing, copy file _undeploy.json_ from folder _\_assets/ex3_ to _xflights/db_.
 
 4. In the xtravels terminal, run
     ```
