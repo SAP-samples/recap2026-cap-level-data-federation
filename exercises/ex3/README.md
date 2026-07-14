@@ -1,9 +1,8 @@
 # Exercise 3 - Synonym-based federation
 
-In this exercise, you will change the federation method in xtravels
-from servicel-level replication to federation via HANA synonyms
-with the help of the new synonym plugin ...provide link once published...
-<!-- TODO -->
+In this exercise, you will change the federation method in xtravels from servicel-level
+replication to federation via HANA synonyms with the help of the new synonym plugin
+[cap-js/cds-federation-synonyms](https://github.com/cap-js/cds-federation-synonyms).
 
 All file or directory paths in this exercise are relative to the workspace folder _ws_
 created in the [Preparation](../ex0/README.md) section.

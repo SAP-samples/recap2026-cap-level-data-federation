@@ -16,15 +16,23 @@ You will then replace local entity `Passenger` with entity `Customer` from the D
 This session focuses on the CAP part of the integration with a BDC Data Product.
 Prior to the session, we have already
 * prepared a BDC tenant with the "Customer" Data Product installed
-* created a HANA Remote Source in the HANA instance, which points to the share (see also [assets/ex4/HANA-setup](../../assets/ex4/HANA-setup.md))
+* created a HANA Remote Source in the HANA instance, which points to the share (see also [assets/HANA-setup](../../assets/HANA-setup.md))
 * created a schema `DP_VT_CUSTOMER` in the HANA instance with virtual tables pointing
   to the share tables in the BDC tenant.
 * prepared a user-provided service `grantor-dp-admin` in Cloud Foundry that holds credentials for accessing this schema.
 
 You will then deploy the database model of the xtravels app to HANA with the Data Product entity `Customer`
-in the CAP app to being connected to the corresponding virtual tables via a synonym.
+in the CAP app to be connected to the corresponding virtual tables via a synonym.
 
 <br>![](/exercises/ex4/images/04_00_0020.png)
+
+
+> [!TIP]
+> In Exercises 4.1 and 4.2 you use [SAP Business Accelerator Hub](https://api.sap.com/) to find
+Data Product "Customer" and download its metadata. If you can't access SAP Business Accelerator Hub,
+you can jump directly to step 3 of  [Exercise 4.2](#exercise-42---download-data-product-metadata)
+and use the metadata file provided in [_assets/ex4_](../../ws/_assets/ex4).
+
 
 
 ## Exercise 4.1 - Discovery
@@ -67,12 +75,12 @@ The API is described as "CSN Interop JSON", which can be downloaded from here.
 
     <br>![](/exercises/ex4/images/04_02_0020.png)
 
-2. Download the CSN Interop JSON.
+3. Download the CSN Interop JSON.
 
     If you should not be able to download the CSN Interop JSON for any reason,
     you can use [_assets/ex4/sap-s4com-Customer-v1.json_](../../ws/_assets/ex4/sap-s4com-Customer-v1.json).
 
-3. Copy the file to folder _xtravels_ in your workspace.
+4. Copy the file to folder _xtravels_ in your workspace.
 
     <br>![](/exercises/ex4/images/04_02_0030.png)
 
@@ -323,6 +331,6 @@ BDC shares.
 
 ## Summary
 
-You've now consumed a DBC Data Product, incorporated it into the xtravels model
+You've now consumed a BDC Data Product, incorporated it into the xtravels model
 and used the synonym plugin to connect your local entities to the virtual tables
 pointing to the BDC data.
