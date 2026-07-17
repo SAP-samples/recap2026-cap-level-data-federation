@@ -1,6 +1,6 @@
 # Exercise 3 - Synonym-based federation
 
-In this exercise, you will change the federation method in xtravels from servicel-level
+In this exercise, you will change the federation method in xtravels from service-level
 replication to federation via HANA synonyms with the help of the new synonym plugin
 [cap-js/cds-federation-synonyms](https://github.com/cap-js/cds-federation-synonyms).
 
@@ -94,7 +94,7 @@ is the annotations at the service (and the names, of course).
 
 
 
-## Exercise 3.3. - Deploy xflights to HANA
+## Exercise 3.3 - Deploy xflights to HANA
 
 After completing these steps, you will have deployed the database model of the xflights app to HANA.
 
@@ -108,11 +108,13 @@ After completing these steps, you will have deployed the database model of the x
     cds add hana
     ```
 
-3. Add to file _xflights/db/undeploy.json_ (this file should have been created by the previous step):
+3. Create a file _xflights/db/undeploy.json_ with this content:
     ```
-    "src/gen/**/*.hdbrole"
+    [
+      "src/gen/**/*.hdbrole"
+    ]
     ```
-    If the file is missing, copy file _undeploy.json_ from folder _\_assets/ex3_ to _xflights/db_.
+    If the file already exists (for cds-dk versions earlier than 10), add this entry to it.
 
 4. Before we actually deploy to HANA, run
     ```sh
@@ -163,14 +165,14 @@ the entities of the new API package. The rest of the model can stay as is.
     cds watch
     ```
 
-3. Go to the index page [localhost:4004](http://localhost:4004/) of the xtravels app,
+4. Go to the index page [localhost:4004](http://localhost:4004/) of the xtravels app,
    start the [xtravels web app](http://localhost:4004/travels/webapp/index.html),
    and click a travel to get to the details page.
    The imported service is mocked and we again see flights data from _csv_ files, this time from the new API package.
 
     <br>![](/exercises/ex3/images/03_04_0010.png)
 
-4. Stop `cds watch` in the xtravels terminal by typing `Ctrl+C`.
+5. Stop `cds watch` in the xtravels terminal by typing `Ctrl+C`.
 
 
 
@@ -188,12 +190,14 @@ After completing these steps, the xtravels app is ready to be deployed to HANA.
     cds add hana
     ```
 
-3. Add to file _xtravels/db/undeploy.json_ (this file should have been created by the previous step):
+3. Create a file _xtravels/db/undeploy.json_ with this content:
     ```
-    "src/gen/**/*.hdbsynonym",
-    "cfg/gen/**/*.hdbsynonymconfig"
+    [
+      "src/gen/**/*.hdbsynonym",
+      "cfg/gen/**/*.hdbsynonymconfig"
+    ]
     ```
-    If the file is missing, copy file _undeploy.json_ from folder _\_assets/ex3_ to _xtravels/db_.
+    If the file already exists (for cds-dk versions earlier than 10), add these entries to it.
 
 4. In the xtravels terminal, run
     ```
@@ -240,7 +244,7 @@ or to the views in xflights.
 After completing these steps, you will have deployed the xtravels app to HANA.
 Flight information is read via synonyms from the local mock tables.
 
-We first make a deployment without the _.hdbsynonymconfig_ file so that the mock tables in the xtravels HDI copntainer are used.
+We first make a deployment without the _.hdbsynonymconfig_ file so that the mock tables in the xtravels HDI container are used.
 Then we redeploy with the _.hdbsynonymconfig_ and thus redirect the synonyms to the
 xflights HDI container.
 

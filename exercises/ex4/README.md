@@ -8,7 +8,7 @@ a Data Product:
 * you use the consumption views in the model
 
 In this exercise, you will import the metadata for S/4 Data Product "Customer" to the xtravels app.
-You will then replace local entity `Passenger` with entity `Customer` from the Data Product.
+You will then replace local entity `Passengers` with entity `Customer` from the Data Product.
 
 <br>![](/exercises/ex4/images/04_00_0010.png)
 
@@ -136,7 +136,7 @@ and the data sets of the Data Product are represented as entities:
 
 4. Have a look at file _annotations.cds_ in the same folder.  
 The Data Product entities come with a lot of annotations, e.g. `@title` for labels.
-The corresponding localized texts are also part of the Data Products's API package in folder _\_i18n_.
+The corresponding localized texts are also part of the Data Product's API package in folder _\_i18n_.
 
 5. Have a look at file _xtravels/package.json_. A new dependency has been added:
 
@@ -191,7 +191,7 @@ the synonym plugin to handle this service:
 
 ## Exercise 4.5 - Use the Data Product in the model
 
-After completing these steps, you will have replaced local entity `Passenger`
+After completing these steps, you will have replaced local entity `Passengers`
 with entity `Customer` of the Data Product.
 
 1. In file _xtravels/db/schema.cds_, below the `using` directives at the top of the file, add
@@ -210,13 +210,13 @@ of entity `Passengers`.
     Customer     : Association to c.Customers;
     ```
 
-1. In file _srv/travel-service.cds_, below the `using` directives at the top of the file, add
+3. In file _srv/travel-service.cds_, below the `using` directives at the top of the file, add
     ```cds
     using { sap.capire.customer as c } from '../apis/customers';
     ```
 
-3. In the same file, add a projection for
-    `Customer` below the projection for `Passenger` inside service `TravelService`:
+4. In the same file, add a projection for
+    `Customer` below the projection for `Passengers` inside service `TravelService`:
     ```cds
       entity Customers as projection on c.Customers;
     ```
@@ -299,7 +299,7 @@ BDC shares.
     TARGET_CONTAINER=db
     SERVICE_REPLACEMENTS='[{"key":"sap.capire.flights.data_syn","service":"xflights-db"},{"key":"sap.s4com.Customer.v1","service":"grantor-dp-admin"}]'
     ```
-    This adds another service replacements, where we map the logical service name `sap.s4com.Customer.v1`to
+    This adds another service replacement, where we map the logical service name `sap.s4com.Customer.v1` to
     the physical name `grantor-dp-admin`.
 
 3. In the xtravels terminal, execute

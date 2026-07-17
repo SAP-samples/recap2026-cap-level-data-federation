@@ -140,7 +140,7 @@ After completing these steps, you will have a complete xtravels model, using the
 imported entities via the consumption views as if they were local.
 
 We use the imported entities as association targets in _xtravels/db/schema.cds_.
-In addition, we expose filght information directly in the travel service.
+In addition, we expose flight information directly in the travel service.
 
 1. In file _xtravels/db/schema.cds_, below the `using` directive at the top of the file, add
     ```cds
@@ -282,7 +282,7 @@ Let's have a closer look at this code, which handles these main tasks:
 4. Observe the output of `cds watch` in the xtravels terminal.  
 This time the xtravels app recognizes that there is another app (xflights) that
 exposes service `sap.capire.flights.data` and connects to that service
-rather than mocking it (note that no csv data is loaded for the entites
+rather than mocking it (note that no csv data is loaded for the entities
 of this service).
 
     <br>![cds watch output](/exercises/ex2/images/02_06_0010.png)

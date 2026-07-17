@@ -6,7 +6,7 @@ All file or directory paths in this exercise are relative to the workspace folde
 created in the [Preparation](../ex0/README.md) section.
 
 
-## Exercise 1.1 - Inspect xflight's domain model
+## Exercise 1.1 - Inspect xflights' domain model
 
 Your workspace already contains a folder xflights with a complete app.
 
