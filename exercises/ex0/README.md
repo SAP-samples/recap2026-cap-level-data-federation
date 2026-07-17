@@ -3,7 +3,7 @@
 ## Note
 
 This exercise description has been written for Windows computers.
-You can of course run the exercise also on different machines, but you may have to adapt at a few places.
+You can of course run the exercise also on different machines, but you may have to adapt in a few places.
 
 
 ## Preparation 1 - Setup workspace
